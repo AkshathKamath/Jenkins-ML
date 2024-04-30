@@ -1,6 +1,8 @@
 MANIFEST.in
 requirements.txt
 setup.py
+./tests/pytest.ini
+./tests/test_prediction.py
 prediction_model/VERSION
 prediction_model/__init__.py
 prediction_model/pipeline.py

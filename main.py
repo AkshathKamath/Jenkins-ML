@@ -76,7 +76,7 @@ def predict_gui(Gender: str,
     prediction = generate_predictions([data_dict])["Predictions"][0]
     if prediction == "Y":
         pred = "Approved"
-    elif prediction=="N":
+    elif prediction == "N":
         pred = "Rejected"
     return {"status":pred}
 

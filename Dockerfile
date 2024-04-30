@@ -11,14 +11,14 @@ COPY . /code
 
 #set permissions
 
-RUN chmod +x /code/src
+RUN chmod +x /code/Source
 
-RUN pip install --no-cache-dir --upgrade -r code/src/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r code/Source/requirements.txt
 
 EXPOSE 8005
 
-WORKDIR /code/src
+WORKDIR /code/Source
 
-ENV PYTHONPATH "${PYTHONPATH}:/code/src"
+ENV PYTHONPATH "${PYTHONPATH}:/code/Source"
 
 CMD pip install -e .

@@ -6,17 +6,18 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
-#copy to code directory
+#copy all current directory files to code directory of the container
 COPY . /code 
 
-#set permissions
-
+#set permissions for Source folders inside container (As model will be created & stored)
 RUN chmod +x /code/Source
 
 RUN pip install --no-cache-dir --upgrade -r code/Source/requirements.txt
 
+# Expose 8005 port of the container
 EXPOSE 8005
 
+# Set working directory as Source for subsequent commands
 WORKDIR /code/Source
 
 ENV PYTHONPATH "${PYTHONPATH}:/code/Source"
